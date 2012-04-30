@@ -3,6 +3,8 @@ var TestRunner = YAHOO.tool.TestRunner; // shorthand for YAHOO.tool.TestRunner
 
 TestRunner.add(hasClass_Tests);
 TestRunner.add(addClass_Tests); // test cases
+TestRunner.add(toggleClass_Tests); // test cases
+TestRunner.add(toggle_Tests); // test cases
 
 
 function handleTestFail(data){

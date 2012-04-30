@@ -19,6 +19,9 @@ var hasClass_Tests = new YAHOO.tool.TestCase({
     testHasClassTrue: function () {
         YAHOO.util.Assert.isTrue( $('#'+this.divId).hasClass('my-div') );
     },
+    testHasClassFalse: function () {
+        YAHOO.util.Assert.isFalse( $('#'+this.divId).hasClass('my-dividends') );
+    },
     testHasClassMultiTrue: function () {
 		this.div.setAttribute('class', 'my-div funtimes')
         YAHOO.util.Assert.isTrue( $('#'+this.divId).hasClass('funtimes') );

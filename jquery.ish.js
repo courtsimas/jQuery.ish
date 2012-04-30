@@ -19,9 +19,10 @@ $.fn = {
         }
         return this;
     },
+    
     hasClass: function(cl) {
-        var i;
-        for (i = 0; i < this.length; i++) {
+        var i = this.length;
+        while (i--) {
             var objCl = this[i].className.split(' '),
                 ii;
             for (ii in objCl) {
@@ -33,8 +34,8 @@ $.fn = {
         return false;
     },
     addClass: function(cl) {
-        var i;
-        for (i = 0; i < this.length; i++) {
+        var i = this.length;
+        while (i--) {
             var oc = " " + this[i].className + " ";
             if (oc.indexOf(" " + cl + " ") == -1) {
                 this[i].className = (this[i].className + " " + cl).replace(/^\s\s*/, '').replace(/\s\s*$/, '');
@@ -43,22 +44,18 @@ $.fn = {
         return this;
     },
     toggleClass: function(cl) {
-        var i;
-        for (i = 0; i < this.length; i++) {
-            if (this.hasClass(cl)) {
-                this.removeClass(cl);
-            } else {
-                this.addClass(cl);
-            }
+        var i = this.length;
+        while (i--) {
+            this.hasClass(cl) ? this.removeClass(cl) : this.addClass(cl);
         }
         return this;
     },
     removeClass: function(cl) {
-        var i;
-        for (i = 0; i < this.length; i++) {
+        var i = this.length;
+        while (i--) {
             var objCl = this[i].className.split(' '),
-                ii;
-            for (ii = 0; ii < objCl.length; ii++) {
+                ii = 0;
+            for (; ii < objCl.length; ii++) {
                 if (objCl[ii] == cl) {
                     delete(objCl[ii]);
                 }
@@ -68,26 +65,26 @@ $.fn = {
         return this;
     },
     toggle: function() {
-    	var i;
-        for (i = 0; i < this.length; i++) {
-	       	if(window.getComputedStyle(this[i]).display == 'none'){
-			this[i].style.display = 'block';
+        var i = this.length;
+        while (i--) {
+        if(window.getComputedStyle(this[i]).display == 'none'){
+			this.show.call(this);
 		} else {
-			this[i].style.display = 'none';
+			this.hide.call(this);
 		}  
         }
         return this;
     },
     hide: function() {
-	var i;
-        for (i = 0; i < this.length; i++) {
+        var i = this.length;
+        while (i--) {
         	this[i].style.display = 'none'; 
         }
         return this;
     },
     show: function() {
-	var i;
-        for (i = 0; i < this.length; i++) {
+        var i = this.length;
+        while (i--) {
 	       	this[i].style.display = 'block'; 
         }
         return this;
