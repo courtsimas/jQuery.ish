@@ -20,6 +20,8 @@ A baseline feature set and jQuery compatible syntax for modern browsers. Use it 
 - Original Size:  1.7KB (576 bytes gzipped)
 - Compiled Size:	1.23KB (483 bytes gzipped)
 
+compilation done with [Google Closure Compiler][4]
+
 ## Browser Support and Dependancy
 
 Browser support dependencies:
@@ -51,3 +53,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [1]: https://developer.mozilla.org/en/DOM/Document.querySelectorAll#Browser_compatibility
 [2]: http://zeptojs.com
 [3]: https://developer.mozilla.org/en/DOM/window.getComputedStyle
+[4]: http://closure-compiler.appspot.com/home
