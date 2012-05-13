@@ -34,7 +34,7 @@ $.fn = {
         var i;
         for (i = 0; i < this.length; i++) {
             if (!this[i].className.match(new RegExp('(\\s|^)' + cl + '(\\s|$)'))) {
-            	$.trim(this[i].className = (this[i].className + " " + cl));
+            	this[i].className = this[i].className + " " + cl;
             }
         }
         return this;
@@ -50,7 +50,7 @@ $.fn = {
     removeClass: function(cl) {
         var i;
         for (i = 0; i < this.length; i++) {
-		$.trim(this[i].className=this[i].className.replace(new RegExp('(\\s|^)' + cl + '(\\s|$)'),' '));
+		this[i].className = $.trim(this[i].className.replace(new RegExp('(\\s|^)' + cl + '(\\s|$)'),' '));
         }
         return this;
     },
