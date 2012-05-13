@@ -21,17 +21,18 @@ $.fn = {
     },
     hasClass: function(cl) {
         var i;
-        for (i = 0; i < this.length; i++) {
-            this[i].className.match(new RegExp('(\\s|^)' + cl + '(\\s|$)')) ? return true : null;
-        }
+        for (i = 0; i < this.length; i++) {			
+			if(this[i].className.match(new RegExp('(\\s|^)' + cl + '(\\s|$)'))) {
+				return true;
+			}
+		}
         return false;
     },
     addClass: function(cl) {
         var i;
         for (i = 0; i < this.length; i++) {
-            var oc = " " + this[i].className + " ";
-            if (oc.indexOf(" " + cl + " ") == -1) {
-                this[i].className = (this[i].className + " " + cl).replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+            if ((" " + this[i].className + " ").indexOf(" " + cl + " ") == -1) {
+            	this[i].className = (this[i].className + " " + cl).replace(/^\s\s*/, '').replace(/\s\s*$/, '');
             }
         }
         return this;
@@ -50,14 +51,7 @@ $.fn = {
     removeClass: function(cl) {
         var i;
         for (i = 0; i < this.length; i++) {
-            var objCl = this[i].className.split(' '),
-                ii;
-            for (ii = 0; ii < objCl.length; ii++) {
-                if (objCl[ii] == cl) {
-                    delete(objCl[ii]);
-                }
-            }
-            this[i].className = objCl.join(' ').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+			this[i].className=this[i].className.replace(new RegExp('(\\s|^)' + cl + '(\\s|$)'),' ').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
         }
         return this;
     },
@@ -65,15 +59,15 @@ $.fn = {
     	var i;
         for (i = 0; i < this.length; i++) {
 	       	if(window.getComputedStyle(this[i]).display == 'none'){
-			this[i].style.display = 'block';
-		} else {
-			this[i].style.display = 'none';
-		}  
+				this[i].style.display = 'block';
+			} else {
+				this[i].style.display = 'none';
+			}  
         }
         return this;
     },
     hide: function() {
-	var i;
+		var i;
         for (i = 0; i < this.length; i++) {
         	this[i].style.display = 'none'; 
         }
