@@ -22,13 +22,7 @@ $.fn = {
     hasClass: function(cl) {
         var i;
         for (i = 0; i < this.length; i++) {
-            var objCl = this[i].className.split(' '),
-                ii;
-            for (ii in objCl) {
-                if (objCl[ii] == cl) {
-                    return true;
-                }
-            }
+            this[i].className.match(new RegExp('(\\s|^)' + cl + '(\\s|$)')) ? return true : null;
         }
         return false;
     },
