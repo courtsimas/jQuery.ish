@@ -1,14 +1,14 @@
 jQuery.ish 0.3 - dev
 =========
 
-A baseline feature set and jQuery compatible syntax for modern browsers. Use it as part of your toolset for page performance where the full version of jQuery is not desired.
+A baseline feature set and jQuery compatible syntax for modern browsers. Use it as part of your toolset to increase page load performance where the full version of jQuery is not desired.
 
 ## This project is to:
 
-- include the parts of jQuery that we can't live without and use native js methods for everything else
-- download size of less than 500 bytes minified and gzipped
-- offer 100% jQuery compatible syntax
-- full support for jQuery style chaining
+- provide a developer with a baseline feature set that can be extended with native js methods for everything else
+- have download size of less than 500 bytes minified and gzipped
+- offer a jQuery compatible syntax
+- have full support for jQuery style chaining
 
 ## This project is NOT to:
 
