@@ -34,7 +34,7 @@ $.fn = {
         var i;
         for (i = 0; i < this.length; i++) {
             if (!this[i].className.match(new RegExp('(\\s|^)' + cl + '(\\s|$)'))) {
-            	this[i].className = $.trim((this[i].className + " " + cl));
+            	this[i].className = this[i].className + " " + cl;
             }
         }
         return this;
