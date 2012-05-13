@@ -17,7 +17,6 @@ $.fn = {
         } else {
             $.fn.elm = [el];
         }
-        return this;
     },
     hasClass: function(cl) {
         var i;
