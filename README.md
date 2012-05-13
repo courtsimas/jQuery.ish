@@ -1,4 +1,4 @@
-jQuery.ish 0.1
+jQuery.ish 0.2
 =========
 
 A baseline feature set and jQuery compatible syntax for modern browsers. Use it as part of your toolset for page performance where the full version of jQuery is not desired.
@@ -17,8 +17,8 @@ A baseline feature set and jQuery compatible syntax for modern browsers. Use it 
 
 ## Code Size
 
-- Original Size:  1.7KB (576 bytes gzipped)
-- Compiled Size:	1.23KB (483 bytes gzipped)
+- Original Size: 1.54KB (551 bytes gzipped)
+- Compiled Size: 1.16KB (464 bytes gzipped)
 
 compilation done with [Google Closure Compiler][4]
 
@@ -38,6 +38,7 @@ Browser support dependencies:
 - toggle()
 - show()
 - hide()
+- trim()
 
 ## MIT License
 
