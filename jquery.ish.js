@@ -9,7 +9,7 @@ var $ = function(id) {
     return o;
 };
 $.trim = function(s){
-	return s.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+	return s.replace(/^\s+|\s+$/g,'');
 };
 $.fn = {
     init: function(el) {
