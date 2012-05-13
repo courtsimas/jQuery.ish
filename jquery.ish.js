@@ -8,6 +8,9 @@ var $ = function(id) {
     }
     return o;
 };
+$.trim = function(s){
+	return s.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+};
 $.fn = {
     init: function(el) {
         if (typeof el == 'string') {
@@ -30,8 +33,8 @@ $.fn = {
     addClass: function(cl) {
         var i;
         for (i = 0; i < this.length; i++) {
-            if ((" " + this[i].className + " ").indexOf(" " + cl + " ") == -1) {
-            	this[i].className = (this[i].className + " " + cl).replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+            if (!this[i].className.match(new RegExp('(\\s|^)' + cl + '(\\s|$)'))) {
+            	$.trim(this[i].className = (this[i].className + " " + cl));
             }
         }
         return this;
@@ -50,7 +53,7 @@ $.fn = {
     removeClass: function(cl) {
         var i;
         for (i = 0; i < this.length; i++) {
-		this[i].className=this[i].className.replace(new RegExp('(\\s|^)' + cl + '(\\s|$)'),' ').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+			$.trim(this[i].className=this[i].className.replace(new RegExp('(\\s|^)' + cl + '(\\s|$)'),' '));
         }
         return this;
     },
@@ -58,10 +61,10 @@ $.fn = {
     	var i;
         for (i = 0; i < this.length; i++) {
         	if(window.getComputedStyle(this[i]).display == 'none'){
-			this[i].style.display = 'block';
-		} else {
-			this[i].style.display = 'none';
-		}  
+				this[i].style.display = 'block';
+			} else {
+				this[i].style.display = 'none';
+			}  
         }
         return this;
     },
@@ -73,7 +76,7 @@ $.fn = {
         return this;
     },
     show: function() {
-	var i;
+		var i;
         for (i = 0; i < this.length; i++) {
 	       	this[i].style.display = 'block'; 
         }
