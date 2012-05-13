@@ -23,11 +23,11 @@ $.fn = {
     },
     hasClass: function(cl) {
         var i;
-        for (i = 0; i < this.length; i++) {			
-		if(this[i].className.match(new RegExp('(\\s|^)' + cl + '(\\s|$)'))) {
-			return true;
+		for (i = 0; i < this.length; i++) {			
+			if(this[i].className.match(new RegExp('(\\s|^)' + cl + '(\\s|$)'))) {
+				return true;
+			}
 		}
-	}
         return false;
     },
     addClass: function(cl) {
@@ -40,20 +40,17 @@ $.fn = {
         return this;
     },
     toggleClass: function(cl) {
-        var i;
-        for (i = 0; i < this.length; i++) {
-            if (this.hasClass(cl)) {
-                this.removeClass(cl);
-            } else {
-                this.addClass(cl);
-            }
+        if (this.hasClass(cl)) {
+            this.removeClass(cl);
+        } else {
+            this.addClass(cl);
         }
         return this;
     },
     removeClass: function(cl) {
         var i;
         for (i = 0; i < this.length; i++) {
-		$.trim(this[i].className=this[i].className.replace(new RegExp('(\\s|^)' + cl + '(\\s|$)'),' '));
+			$.trim(this[i].className=this[i].className.replace(new RegExp('(\\s|^)' + cl + '(\\s|$)'),' '));
         }
         return this;
     },
@@ -61,22 +58,22 @@ $.fn = {
     	var i;
         for (i = 0; i < this.length; i++) {
         	if(window.getComputedStyle(this[i]).display == 'none'){
-			this[i].style.display = 'block';
-		} else {
-			this[i].style.display = 'none';
-		}  
+				this[i].style.display = 'block';
+			} else {
+				this[i].style.display = 'none';
+			}  
         }
         return this;
     },
     hide: function() {
-	var i;
+		var i;
         for (i = 0; i < this.length; i++) {
         	this[i].style.display = 'none'; 
         }
         return this;
     },
     show: function() {
-	var i;
+		var i;
         for (i = 0; i < this.length; i++) {
 	       	this[i].style.display = 'block'; 
         }
