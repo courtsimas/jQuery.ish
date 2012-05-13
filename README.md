@@ -33,11 +33,11 @@ Browser support dependencies:
 
 - hasClass()
 - addClass()
-- toggleClass()
 - removeClass()
-- toggle()
+- toggleClass()
 - show()
 - hide()
+- toggle()
 - trim()
 
 ## MIT License
