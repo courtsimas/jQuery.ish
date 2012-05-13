@@ -22,10 +22,10 @@ $.fn = {
     hasClass: function(cl) {
         var i;
         for (i = 0; i < this.length; i++) {			
-			if(this[i].className.match(new RegExp('(\\s|^)' + cl + '(\\s|$)'))) {
-				return true;
-			}
+		if(this[i].className.match(new RegExp('(\\s|^)' + cl + '(\\s|$)'))) {
+			return true;
 		}
+	}
         return false;
     },
     addClass: function(cl) {
@@ -51,18 +51,18 @@ $.fn = {
     removeClass: function(cl) {
         var i;
         for (i = 0; i < this.length; i++) {
-			this[i].className=this[i].className.replace(new RegExp('(\\s|^)' + cl + '(\\s|$)'),' ').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+		this[i].className=this[i].className.replace(new RegExp('(\\s|^)' + cl + '(\\s|$)'),' ').replace(/^\s\s*/, '').replace(/\s\s*$/, '');
         }
         return this;
     },
     toggle: function() {
     	var i;
         for (i = 0; i < this.length; i++) {
-	       	if(window.getComputedStyle(this[i]).display == 'none'){
-				this[i].style.display = 'block';
-			} else {
-				this[i].style.display = 'none';
-			}  
+        	if(window.getComputedStyle(this[i]).display == 'none'){
+			this[i].style.display = 'block';
+		} else {
+			this[i].style.display = 'none';
+		}  
         }
         return this;
     },
