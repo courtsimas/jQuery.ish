@@ -17,8 +17,8 @@ A baseline feature set and jQuery compatible syntax for modern browsers. Use it 
 
 ## Code Size
 
-- Original Size: 1.56KB (551 bytes gzipped)
-- Compiled Size: 1.14KB (474 bytes gzipped)
+- Original Size: 1.57KB (551 bytes gzipped)
+- Compiled Size: 1.15KB (475 bytes gzipped)
 
 compilation done with [Google Closure Compiler][4]
 

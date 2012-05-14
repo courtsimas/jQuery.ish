@@ -22,7 +22,8 @@ $.fn = {
         }
     },
     hasClass: function(cl) {
-        var i,regex = new RegExp('(\\s|^)' + cl + '(\\s|$)');
+        var i,
+	    regex = new RegExp('(\\s|^)' + cl + '(\\s|$)');
 	for (i = 0; i < this.length; i++) {			
 		if(this[i].className.match(regex)) {
 			return true;
@@ -31,10 +32,11 @@ $.fn = {
         return false;
     },
     addClass: function(cl) {
-        var i,regex = new RegExp('(\\s|^)' + cl + '(\\s|$)');
+        var i,
+	    regex = new RegExp('(\\s|^)' + cl + '(\\s|$)');
         for (i = 0; i < this.length; i++) {
             if (!this[i].className.match(regex)) {
-            	this[i].className = this[i].className + " " + cl;
+            	this[i].className = $.trim(this[i].className + " " + cl);
             }
         }
         return this;
@@ -48,7 +50,8 @@ $.fn = {
         return this;
     },
     removeClass: function(cl) {
-        var i,regex = new RegExp('(\\s|^)' + cl + '(\\s|$)');
+        var i,
+	    regex = new RegExp('(\\s|^)' + cl + '(\\s|$)');
         for (i = 0; i < this.length; i++) {
 		this[i].className = $.trim(this[i].className.replace(regex,' '));
         }
