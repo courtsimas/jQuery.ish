@@ -1,3 +1,5 @@
+**** We've been asked to remove this project (not by jQuery or github). We will be deleting it tonight at 10pm, if you want to make this your own.. archive it by then :) ****
+
 jQuery.ish 0.2
 =========
 
